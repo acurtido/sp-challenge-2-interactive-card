@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <main class="principal">
+    <section class="tarjetas">
+      <section class="tarjeta-frontal">
+        <img src="./images/bg-card-front.png" alt="" />
+        <!-- <span id="tarjetaFrontalNombre" class="tarjeta-frontal__nombre"> Jane Appleseed </span> -->
+        <span id="tarjetaFrontalNumero" class="tarjeta-frontal__numero">0000 0000 0000 1111</span>
+      </section>
+      <section class="tarjeta-reverso">
+        <img src="./images/bg-card-back.png" alt="" />
+      </section>
+    </section>
+
+    <section id="seccionFormulario" class="formulario">
+      <form onsubmit="enviar(e)" id="formulario" class="formulario-form">
+        <label class="formulario__label" for="cardholder">CARDHOLDER NAME</label>
+        <input class="formulario__input" type="text" id="cardholder" placeholder="e.g. Jane Appleseed" />
+        <span id="errorCardHolder" class="errores"></span>
+        <label class="formulario__label" for="cardnumber">CARD NUMBER</label>
+        <input class="formulario__input" type="text" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" />
+        <span id="errorCardNumber" class="errores"></span>
+        <!-- Versión Grid -->
+        <div class="grid-container">
+          <label class="formulario__label --span-2" for="expdate">EXP. DATE (MM/YY)</label>
+          <label class="formulario__label --span-2" for="cvc">CVC</label>
+          <div>
+            <input class="formulario__input" type="text" id="expdateMM" placeholder="MM" />
+            <span id="errorExpDateMM" class="errores"></span>
+          </div>
+
+          <div>
+            <input class="formulario__input" type="text" id="expdateYY" placeholder="YY" />
+            <span id="errorExpDateYY" class="errores"></span>
+          </div>
+
+          <div>
+            <input class="formulario__input --span-2" type="text" id="cvc" placeholder="CVC" />
+            <span id="errorCVC" class="errores"></span>
+          </div>
+        </div>
+        <button id="btnConfirm" type="button" class="formulario__btn--confirm">Confirm</button>
+      </form>
+    </section>
+
+    <section id="seccionCompletado" class="completado oculto">
+      <img src="./images/icon-complete.svg" alt="" />
+      <h2 class="completado__titulo">THANK YOU!</h2>
+      <p class="completado__parrafo">We've added your card details</p>
+      <button id="btnContinue" type="button" class="completado__btn--continue">Continue</button>
+    </section>
+  </main>
+
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
+</html>
